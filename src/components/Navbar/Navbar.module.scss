@@ -1,0 +1,35 @@
+@import 'src/styles/variables.scss';
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  li {
+    padding: 10px;
+
+    a {
+      padding-bottom: 10px;
+      font-size: $fontSizeM;
+      line-height: $lineHeightM;
+      color: $whiteColor;
+      border-bottom: 1px solid transparent;
+      opacity: .8;
+      transition: .5s;
+
+      &:hover {
+        opacity: .2;
+        border-color: $whiteColor;
+      }
+    }
+  }
+
+  .active {
+    opacity: 1;
+    border-bottom: 1px solid $whiteColor;
+  }
+}

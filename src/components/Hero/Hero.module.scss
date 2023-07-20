@@ -1,0 +1,140 @@
+@import 'src/styles/variables.scss';
+
+.hero {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+
+    @media (max-width: 1000px) {
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 58px;
+      text-transform: uppercase;
+      color: transparent;
+      background-image: linear-gradient(90deg, #fff 20%, #ff3c00 100%);
+      clip-path: ellipse(385px 100px at 10% 20%);
+      -webkit-background-clip: text;
+
+      @media (max-width: 1024px) {
+        font-size: 36px;
+        clip-path: ellipse(245px 70px at 10% 20%);
+      }
+
+      @media (max-width: 1000px) {
+        clip-path: inherit;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      color: transparent;
+      background-image: linear-gradient(90deg, #fff 20%, #ff3c00 100%);
+      -webkit-background-clip: text;
+
+      @media (max-width: 1024px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__left {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1000px) {
+      margin-top: 135px;
+      align-items: center;
+    }
+
+    button {
+      @media (max-width: 1000px) {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    max-width: 370px;
+    width: 100%;
+    margin-top: 110px;
+
+    @media (max-width: 1000px) {
+      margin-top: 0;
+    }
+  }
+
+  button {
+    width: fit-content;
+    padding: 10px 20px;
+    border: .5px solid #2a2a2d;
+    background-color: transparent;
+    color: $whiteColor;
+    opacity: .6;
+    transition: .5s;
+    position: relative;
+
+    &:hover {
+      opacity: .4;
+    }
+
+    &:after {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      content: '';
+      border-color: $whiteColor;
+      border-style: solid;
+      right: 0;
+      top: 0;
+      border-width: 1px 1px 0 0;
+    }
+
+    div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      &::after {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        content: '';
+        border-color: $whiteColor;
+        border-style: solid;
+        left: 0;
+        bottom: 0;
+        border-width: 0 0 1px 1px;
+      }
+    }
+  }
+
+  &__mobile {
+    margin-top: 20px;
+
+    @media (min-width: 1000px) {
+      display: none;
+    }
+  }
+}

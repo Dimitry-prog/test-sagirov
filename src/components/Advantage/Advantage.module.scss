@@ -1,0 +1,51 @@
+@import 'src/styles/variables.scss';
+
+.item {
+  width: 185px;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: .8;
+  transition: .5s;
+
+  @media (max-width: 1024px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 500px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  &:hover {
+    background-image: url(../../assets/figura_4_kopiya.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  span {
+    color: $whiteColor;
+    opacity: .4;
+  }
+
+  span:first-of-type {
+    margin-bottom: 15px;
+  }
+
+  span:nth-of-type(2n) {
+    margin-bottom: 5px;
+    font-size: 50px;
+    line-height: 46px;
+    opacity: 1;
+  }
+}
